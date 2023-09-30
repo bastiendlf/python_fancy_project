@@ -1,0 +1,7 @@
+isort
+pytest
+httpx
+pylint
+flake8
+pip-tools
+mkdocs

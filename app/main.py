@@ -3,6 +3,8 @@ from typing import Annotated
 from fastapi import FastAPI, Header, HTTPException
 from pydantic import BaseModel
 
+from app.version import version
+
 fake_secret_token = "coneofsilence"
 
 fake_db = {
@@ -10,7 +12,10 @@ fake_db = {
     "bar": {"id": "bar", "title": "Bar", "description": "The bartenders"},
 }
 
-app = FastAPI()
+app = FastAPI(
+    version=version,
+    summary=fake_secret_token  # TODO remove later
+)
 
 
 class Item(BaseModel):
