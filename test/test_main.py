@@ -1,6 +1,13 @@
+import os
+import sys
+
+test_dir = os.path.dirname(os.path.abspath(__file__))
+code_dir = os.path.abspath(os.path.join(test_dir, "..", "app"))
+sys.path.append(code_dir)
+
 from fastapi.testclient import TestClient
 
-from .main import app
+from app.main import app
 
 client = TestClient(app)
 
