@@ -21,3 +21,8 @@ Docker run container and use port 80:
 ```bash
 docker run -d --name mycontainer -p 80:80 myfastapi
 ```
+
+Optional, clean old docker containers:
+```bash
+docker rm $(docker ps -aq)
+```
